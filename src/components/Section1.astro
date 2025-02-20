@@ -1,0 +1,54 @@
+---
+import Wave from "../icons/Wave.astro";
+import StarsIcon from "../icons/StarsIcon.astro";
+import FlowersIcon from "../icons/FlowersIcon.astro";
+import TimeIcon from "../icons/TimeIcon.astro";
+---
+
+<section class="w-[98%] mx-auto">
+  <div class="top-0 left-0">
+    <Wave class="w-full h-auto" />
+  </div>
+  <div class="mt-10 flex flex-col items-center">
+    <h1 class="text-center text-4xl font-bold text-gray-800">
+      Honrar una vida es sanar el <span class="font-cursiva">corazón</span>
+    </h1>
+    <p class="mt-4 text-xl font-bold text-gray-800 text-center">
+      En los momentos más difíciles, una despedida significativa nos ayuda a:
+    </p>
+    <div class="lg:grid grid-cols-3 lg:w-[80%] mt-8">
+      <div
+        class="flex flex-col items-center bg-terciary p-4 m-4 rounded-4xl border-8 border-solid border-primary"
+      >
+        <StarsIcon class="w-24 h-24" />
+        <h1 class="text-white font-bold text-2xl">Preservar el legado</h1>
+        <p class="text-white text-xl pt-4 text-center">
+          Convertir los recuerdos en un homenaje eterno que trascienda el adiós
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col items-center bg-terciary p-4 m-4 rounded-4xl border-8 border-solid border-primary"
+      >
+        <FlowersIcon class="w-24 h-24" />
+        <h1 class="text-white font-bold text-2xl text-center">
+          Encontrar consuelo colectivo
+        </h1>
+        <p class="text-white text-xl pt-4 text-center">
+          Un espacio compartido donde el amor supera al dolor
+        </p>
+      </div>
+      <div
+        class="flex flex-col items-center bg-terciary p-4 m-4 rounded-4xl border-8 border-solid border-primary"
+      >
+        <TimeIcon class="w-24 h-24" />
+        <h1 class="text-white font-bold text-2xl text-center">
+          Cerrar ciclos con serenidad
+        </h1>
+        <p class="text-white text-xl pt-4 text-center">
+          Un momento esencial para iniciar el camino hacia la sanación
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
