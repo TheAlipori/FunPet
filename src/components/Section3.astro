@@ -3,83 +3,225 @@ import Wave from "../icons/Wave2.astro";
 import HouseIcon from "../icons/houseIcon.astro";
 import EcoIcon from "../icons/ecoIcon.astro";
 import CommunityIcon from "../icons/communityIcon.astro";
+
+const servicios = [
+  {
+    id: 1,
+    titulo: "Cremación con Urna",
+    descripcion: "Una despedida especial conmemorando a tu compañero fiel",
+    detalles: [
+      "Urna de madera natural (Caoba, Nogal, Cedro, Roble)",
+      "Nombre impreso",
+      "Fotografía con marco",
+      "Huella sobre papel opalina sulfatada",
+    ],
+    precio: "Desde $250",
+    imagen: "/img/cremacion-urna.jpg",
+    icono: HouseIcon,
+    color: "secondary",
+  },
+  {
+    id: 2,
+    titulo: "Cremación Ecológica",
+    descripcion: "Transforma su recuerdo en vida",
+    detalles: [
+      "Cenizas en bolsas compostables dentro de maceta",
+      "Elección entre más de 500 especies de plantas",
+      "Incluye fotografía y huella",
+    ],
+    precio: "Desde $300",
+    imagen: "/img/cremacion-ecologica.jpg",
+    icono: EcoIcon,
+    color: "primary",
+  },
+  {
+    id: 3,
+    titulo: "Cremación Comunitaria",
+    descripcion: "Servicio solidario sin recuperación de cenizas",
+    detalles: [
+      "Varios animalitos ingresados simultáneamente",
+      "Cenizas usadas como abono para plantas",
+      "Servicio limitado a mascotas hasta 10 kg",
+    ],
+    precio: "Desde $150",
+    imagen: "/img/cremacion-comunitaria.jpg",
+    icono: CommunityIcon,
+    color: "purple-600",
+  },
+];
 ---
 
-<div class="top-0 left-0 w-[98%] mx-auto mt-12">
-  <Wave class="w-full h-auto" />
-</div>
-<section class="bg-terciary w-[98%] mx-auto">
+<section class="bg-terciary w-[98%] mx-auto relative">
   <h1 class="text-center text-4xl font-bold text-white pt-8">
     Nuestros servicios para ti
   </h1>
+
   <section class="max-w-6xl mx-auto px-4 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Card 1 - Cremación Ecológica -->
-      <div
-        class="bg-quaternary rounded-2xl shadow-lg overflow-hidden border-4 border-secondary transition-transform duration-300 hover:scale-105"
-      >
-        <div class="p-6 bg-secondary">
-          <HouseIcon class="w-12 h-12 text-white mx-auto" />
-        </div>
-        <div class="p-6 text-center">
-          <h3 class="text-xl font-bold text-gray-800 mb-4">
-            Cremación con Urna
-          </h3>
-          <p class="text-gray-600 mb-6">
-            Una despedida especial conmemorando a tu compañero fiel
-          </p>
-          <a
-            href="#"
-            class="inline-block px-6 py-2 bg-secondary text-white rounded-full hover:bg-secondary transition-colors"
+      {
+        servicios.map((servicio) => (
+          <div
+            data-aos="flip-left"
+            data-aos-duration="1000"
+            class={`bg-white rounded-2xl shadow-lg overflow-hidden border-4 border-${servicio.color} transition-transform duration-300 hover:scale-105`}
           >
-            Más info
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 2 - Cremación Comunitaria -->
-      <div
-        class="bg-quaternary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 border-4 border-primary"
-      >
-        <div class="p-6 bg-primary">
-          <EcoIcon class="w-12 h-12 text-white mx-auto" />
-        </div>
-        <div class="p-6 text-center">
-          <h3 class="text-xl font-bold text-gray-800 mb-4">
-            Cremación Ecológica
-          </h3>
-          <p class="text-gray-600 mb-6">Transforma su recuerdo en vida.</p>
-          <a
-            href="#"
-            class="inline-block px-6 py-2 bg-primary text-white rounded-full hover:bg-blue-700 transition-colors"
-          >
-            Más info
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 3 - Cremación Privada -->
-      <div
-        class="bg-quaternary rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105"
-      >
-        <div class="p-6 bg-purple-600">
-          <CommunityIcon class="w-12 h-12 text-white mx-auto" />
-        </div>
-        <div class="p-6 text-center">
-          <h3 class="text-xl font-bold text-gray-800 mb-4">
-            Cremación Comunitaria
-          </h3>
-          <p class="text-gray-600 mb-6">
-            Un adiós con impacto positivo en la naturaleza.
-          </p>
-          <a
-            href="#"
-            class="inline-block px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors"
-          >
-            Más info
-          </a>
-        </div>
-      </div>
+            <div class={`p-6 bg-${servicio.color}`}>
+              <servicio.icono class="w-12 h-12 text-white mx-auto" />
+            </div>
+            <div class="p-6 text-center">
+              <h3 class="text-xl font-bold text-gray-800 mb-4">
+                {servicio.titulo}
+              </h3>
+              <p class="text-gray-600 mb-6">{servicio.descripcion}</p>
+              <button
+                data-service={servicio.id}
+                class={`inline-block px-6 py-2 bg-${servicio.color} text-white rounded-full hover:opacity-90 transition-opacity`}
+                aria-label={`Más información sobre ${servicio.titulo}`}
+              >
+                Más info
+              </button>
+            </div>
+          </div>
+        ))
+      }
     </div>
   </section>
+
+  <!-- Modal -->
+  <!-- Actualizar estructura del modal -->
+  <dialog
+    id="modal-servicios"
+    class="backdrop:bg-black/50 rounded-xl p-0 w-full max-w-4xl fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mx-4"
+  >
+    <div class="grid md:grid-cols-2">
+      <div class="relative h-64 md:h-96">
+        <img
+          id="modal-imagen"
+          src=""
+          alt=""
+          class="w-full h-full object-cover rounded-tl-xl md:rounded-l-xl"
+        />
+        <button
+          onclick="document.getElementById('modal-servicios').close()"
+          class="absolute top-2 right-2 text-white bg-black/50 rounded-full p-2 hover:bg-black/80"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <h3 id="modal-titulo" class="text-2xl font-bold text-gray-800"></h3>
+        <div id="modal-detalles" class="text-gray-600"></div>
+        <div id="modal-precio" class="text-lg font-bold text-primary"></div>
+        <div
+          id="modal-adicional"
+          class="p-3 bg-green-50 rounded-lg text-sm text-green-700"
+        >
+        </div>
+        <button
+          class="bg-secondary text-white px-6 py-2 rounded-full hover:bg-secondary/90 w-full"
+          onclick="document.getElementById('modal-servicios').close()"
+        >
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </dialog>
 </section>
+
+<script client:load>
+  document.addEventListener("DOMContentLoaded", () => {
+    const serviciosData = {
+      1: {
+        titulo: "Cremación con Urna",
+        detalles: [
+          "✔ Urna de madera natural (Caoba, Nogal, Cedro, Roble)",
+          "✔ Nombre impreso",
+          "✔ Fotografía con marco",
+          "✔ Huella sobre papel opalina sulfatada",
+        ],
+        precio: "Desde $250",
+        imagen: "/cremacion-urna.jpg",
+        adicional:
+          "Incluye recogida a domicilio y entrega de cenizas sin costo adicional",
+      },
+      2: {
+        titulo: "Cremación Ecológica",
+        detalles: [
+          "✔ Cenizas en bolsas compostables dentro de maceta",
+          "✔ Elección entre más de 500 especies de plantas",
+          "✔ Incluye fotografía y huella",
+        ],
+        precio: "Desde $300",
+        imagen: "cremacion-ecologica.jpg",
+        adicional: "Maceta biodegradable con semillas incluidas",
+      },
+      3: {
+        titulo: "Cremación Comunitaria",
+        detalles: [
+          "✔ Varios animalitos ingresados simultáneamente",
+          "✔ Cenizas usadas como abono para plantas",
+          "✔ Servicio limitado a mascotas hasta 10 kg",
+        ],
+        precio: "Desde $150",
+        imagen: "cremacion-comunitaria.jpg",
+        adicional: "Certificado de donación a viveros locales",
+      },
+    };
+
+    document.querySelectorAll("[data-service]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const serviceId = parseInt(button.dataset.service);
+        const servicio = serviciosData[serviceId];
+
+        const modal = document.getElementById("modal-servicios");
+        modal.querySelector("#modal-imagen").src = servicio.imagen;
+        modal.querySelector("#modal-titulo").textContent = servicio.titulo;
+        modal.querySelector("#modal-detalles").innerHTML = `
+          <ul class="space-y-3 list-inside">
+            ${servicio.detalles.map((item) => `<li class="ml-4">${item}</li>`).join("")}
+          </ul>
+        `;
+        modal.querySelector("#modal-precio").textContent = servicio.precio;
+        modal.querySelector("#modal-adicional").textContent =
+          servicio.adicional;
+        modal.showModal();
+      });
+    });
+  });
+</script>
+
+<style>
+  dialog {
+    margin: 0 !important;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 768px) {
+    dialog {
+      width: 95%;
+      max-width: none !important;
+    }
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+  }
+
+  dialog {
+    animation: fadeIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

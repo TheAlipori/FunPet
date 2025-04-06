@@ -2,16 +2,17 @@
 import DeliveryIcon from "../icons/DeliveryIcon.astro";
 import PigeonIcon from "../icons/PigeonIcon.astro";
 import HandsIcon from "../icons/HandsIcon.astro";
+import Wave from "../icons/Wave2.astro";
 ---
 
-<section class="bg-terciary w-[98%] mx-auto">
+<section class="w-[98%] mx-auto">
   <div
     class="max-w-screen-md mx-auto px-4 sm:px-6 lg:px-8 flex flex-col justify-between"
   >
     <div class="text-center">
       <p class="mt-4 text-sm leading-7 text-white font-regular">El proceso</p>
       <h3
-        class="text-3xl sm:text-5xl leading-normal font-extrabold tracking-tight text-white"
+        class="text-3xl sm:text-5xl leading-normal font-bold tracking-tight text-terciary"
       >
         Como funciona
       </h3>
@@ -20,7 +21,11 @@ import HandsIcon from "../icons/HandsIcon.astro";
     <div class="mt-20">
       <ul class="">
         <li class="text-left mb-10">
-          <div class="flex flex-row items-start">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            class="flex flex-row items-start"
+          >
             <div class="flex flex-col items-center justify-center mr-5">
               <div
                 class="flex items-center justify-center h-20 w-20 rounded-full bg-secondary text-white border-4 border-white text-xl font-semibold"
@@ -29,7 +34,7 @@ import HandsIcon from "../icons/HandsIcon.astro";
               </div>
             </div>
             <div
-              class="bg-quaternary p-5 pb-10 ring-white ring-4 rounded-4xl shadow-2xl"
+              class="bg-quaternary p-5 pb-10 ring-secondary ring-4 rounded-4xl shadow-2xl"
             >
               <h4 class="text-lg leading-6 font-semibold text-gray-900">
                 Recogida y Preparación
@@ -44,16 +49,20 @@ import HandsIcon from "../icons/HandsIcon.astro";
           </div>
         </li>
         <li class="text-left mb-10">
-          <div class="flex flex-row items-start">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            class="flex flex-row items-start"
+          >
             <div class="flex flex-col items-center justify-center mr-5">
               <div
-                class="flex items-center justify-center h-20 w-20 rounded-full bg-secondary text-white border-4 border-white text-xl font-semibold"
+                class="flex items-center justify-center h-20 w-20 rounded-full bg-primary text-white border-4 border-white text-xl font-semibold"
               >
                 <PigeonIcon class="w-12 h-12 text-white fill-white mx-auto" />
               </div>
             </div>
             <div
-              class="bg-quaternary p-5 pb-10 ring-white ring-4 rounded-4xl shadow-2xl"
+              class="bg-quaternary p-5 pb-10 ring-primary ring-4 rounded-4xl shadow-2xl"
             >
               <h4 class="text-lg font-semibold text-gray-900">Cremación</h4>
               <p class="mt-2 text-base text-gray-600">
@@ -79,16 +88,20 @@ import HandsIcon from "../icons/HandsIcon.astro";
           </div>
         </li>
         <li class="text-left mb-10">
-          <div class="flex flex-row items-start">
+          <div
+            class="flex flex-row items-start"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             <div class="flex flex-col items-center justify-center mr-5">
               <div
-                class="flex items-center justify-center h-20 w-20 rounded-full bg-secondary text-white border-4 border-white text-xl font-semibold"
+                class="flex items-center justify-center h-20 w-20 rounded-full bg-purple-600 text-white border-4 border-white text-xl font-semibold"
               >
                 <HandsIcon class="w-12 h-12 text-white fill-white mx-auto" />
               </div>
             </div>
             <div
-              class="bg-quaternary p-5 pb-10 ring-white ring-4 rounded-4xl shadow-2xl"
+              class="bg-quaternary p-5 pb-10 ring-purple-600 ring-4 rounded-4xl shadow-2xl"
             >
               <h4 class="text-lg leading-6 font-semibold text-gray-900">
                 Entrega y Recuerdo

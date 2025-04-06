@@ -1,43 +1,47 @@
+---
+import Wave from "../icons/Wave.astro";
+---
+
 <section
-  class="w-[90%] lg:w-[60%] mx-auto bg-terciary rounded-4xl border-8 border-primary"
+  data-aos="zoom-out-down"
+  data-aos-duration="2000"
+  class="w-[90%] lg:w-[60%] mx-auto bg-quaternary rounded-4xl"
 >
   <div class="grid grid-cols-1 md:grid-cols-2">
     <!-- Grid responsive -->
     <!-- Contenido de texto -->
-    <div class="order-2 md:order-1 p-6 bg-terciary rounded-4xl">
+    <div class="order-2 md:order-1 p-6 rounded-4xl">
       <!-- Invierte orden en móvil -->
-      <h1 class="text-3xl md:text-2xl font-bold text-white leading-snug">
+      <h1 class="text-xl md:text-2xl font-bold text-terciary leading-snug">
         En nuestra experiencia acompañando familias, hemos aprendido que una
         despedida consciente:
       </h1>
 
-      <div class="mt-6 space-y-4 text-white text-lg">
+      <div class="mt-6 space-y-4 text-black">
         <p class="flex items-center gap-2">
-          <span class="text-yellow-400 text-2xl">•</span> Ayuda a procesar el duelo
-          de manera saludable
+          <span class="text-blue-400">•</span> Ayuda a procesar el duelo de manera
+          saludable
         </p>
         <p class="flex items-center gap-2">
-          <span class="text-yellow-400 text-2xl">•</span> Crea un referente emocional
-          para las generaciones futuras
+          <span class="text-blue-400">•</span> Crea un referente emocional para las
+          generaciones futuras
         </p>
         <p class="flex items-center gap-2">
-          <span class="text-yellow-400 text-2xl">•</span> Permite expresar el amor
-          en su forma más pura
+          <span class="text-blue-400">•</span> Permite expresar el amor en su forma
+          más pura
         </p>
       </div>
-      <h1 class="font-cursiva text-2xl text-center text-white pt-8">
+      <h1 class="font-cursiva text-center pt-8 text-terciary">
         Lo que se vive con amor, se despide con dignidad
       </h1>
-      <p class="text-right text-white text-sm">
-        -Nuestra filosofía de servicio
-      </p>
+      <p class="text-right text-sm">-Nuestra filosofía de servicio</p>
     </div>
 
     <!-- Contenedor de imagen -->
     <div class="order-1 md:order-2 min-h-[300px] md:min-h-auto">
       <!-- Imagen primero en móvil -->
       <img
-        src="/sectionimagen.jpg"
+        src="/sectionimagen.png"
         class="w-full h-full object-cover rounded-t-4xl md:rounded-r-4xl md:rounded-t-none"
       />
     </div>
